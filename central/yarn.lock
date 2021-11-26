@@ -9,18 +9,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@apex/central@workspace:."
   dependencies:
-    "@astriel-division/eslint-config": ^1.2.2
-    "@astriel-division/ts-config": ^1.0.7
+    "@astriel-division/eslint-config": 1.2.2
+    "@astriel-division/ts-config": 1.0.7
     "@augu/lilith": ^5.3.3
-    "@types/express": ^4.17.13
-    "@types/node": ^16.11.10
+    "@types/express": 4.17.13
+    "@types/node": 16.11.10
     express: ^4.17.1
     fs-extra: ^10.0.0
-    typescript: ^4.5.2
+    typescript: 4.5.2
   languageName: unknown
   linkType: soft
 
-"@astriel-division/eslint-config@npm:^1.2.2":
+"@astriel-division/eslint-config@npm:1.2.2":
   version: 1.2.2
   resolution: "@astriel-division/eslint-config@npm:1.2.2"
   dependencies:
@@ -37,7 +37,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astriel-division/ts-config@npm:^1.0.7":
+"@astriel-division/ts-config@npm:1.0.7":
   version: 1.0.7
   resolution: "@astriel-division/ts-config@npm:1.0.7"
   dependencies:
@@ -129,7 +129,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:^4.17.13":
+"@types/express@npm:4.17.13":
   version: 4.17.13
   resolution: "@types/express@npm:4.17.13"
   dependencies:
@@ -162,7 +162,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^16.11.10":
+"@types/node@npm:*, @types/node@npm:16.11.10":
   version: 16.11.10
   resolution: "@types/node@npm:16.11.10"
   checksum: 9c79419c5c3d92d5825bffa30f3668533f598d8b63a73ea7fc24e47f162bdbed92b0f8e4f4261cc3314b39cee050e303366d2aa154abc95c63a572a110b8c160
@@ -1817,7 +1817,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5.2":
+"typescript@npm:4.5.2":
   version: 4.5.2
   resolution: "typescript@npm:4.5.2"
   bin:
@@ -1837,7 +1837,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.5.2#~builtin<compat/typescript>":
   version: 4.5.2
   resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=ddd1e8"
   bin:
