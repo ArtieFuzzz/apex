@@ -4,7 +4,8 @@
   "description": "The central part of the Apex app",
   "main": "dist/central/Server.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node ./dist/central/src/start.js"
   },
   "author": "ArtieFuzzz#8298",
   "license": "MIT",

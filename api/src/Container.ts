@@ -2,8 +2,7 @@ import { BaseComponent, Container } from '@augu/lilith'
 import { join } from 'path'
 
 export const container = new Container({
-	componentsDir: join(__dirname, 'components'),
-	servicesDir: join(__dirname, 'services')
+	componentsDir: join(__dirname, 'components')
 })
 
 container.on('onBeforeInit', (cs: BaseComponent) => console.log(`Loading ${cs.name}`))

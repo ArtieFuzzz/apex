@@ -1,7 +1,7 @@
 {
 	"extends": "@astriel-division/ts-config",
 	"compilerOptions": {
-		"outDir": "./dist",
+		"outDir": "./dist/",
 		"types": ["node"],
 		"sourceMap": true,
 		"declaration": true
