@@ -1,0 +1,26 @@
+{
+  "name": "@apex/central",
+  "version": "1.0.0",
+  "description": "The central part of the Apex app",
+  "main": "dist/central/Server.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "ArtieFuzzz#8298",
+  "license": "MIT",
+  "imports": {
+    "#apex/api": [
+      "./dist/api/src/index.js"
+    ]
+  },
+  "devDependencies": {
+    "@astriel-division/eslint-config": "^1.2.2",
+    "@astriel-division/ts-config": "^1.0.7",
+    "@types/node": "^16.11.10",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@augu/lilith": "^5.3.3",
+    "fs-extra": "^10.0.0"
+  }
+}

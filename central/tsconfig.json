@@ -1,0 +1,10 @@
+{
+  "extends": "@astriel-division/ts-config",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "paths": {
+      "#apex/api": ["../api/src/index"]
+    }
+  }
+}
