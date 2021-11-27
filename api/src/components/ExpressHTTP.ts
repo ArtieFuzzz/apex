@@ -13,8 +13,8 @@ export default class ExpressHTTP implements ComponentOrServiceHooks {
 
 		this.#app.use(xPoweredBy)
 
-		this.#app.listen(80, () => {
-			console.log('Listening on port 80')
+		this.#app.listen(8080, () => {
+			console.log('Listening on port 8080')
 		})
 	}
 }
