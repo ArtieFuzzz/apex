@@ -1,12 +1,17 @@
 import { container } from '#apex/api'
+import Logger from '#apex/api/singletons/Logger'
 
 (async () => {
+	const logger = Logger.getChildLogger({
+		name: 'Apex: Central Control'
+	})
+
 	try {
 		await container.load()
 		
-		console.log('Apex has started!')
+		logger.info('Apex has started!')
 	} catch (e) {
-		console.error(e)
+		logger.error(e)
 		process.exit(1)
 	}
 })()

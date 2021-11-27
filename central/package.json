@@ -2,7 +2,7 @@
   "name": "@apex/central",
   "version": "1.0.0",
   "description": "The central part of the Apex app",
-  "main": "dist/central/Server.js",
+  "main": "dist/central/src/start.js",
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/central/src/start.js"
@@ -12,6 +12,9 @@
   "imports": {
     "#apex/api": [
       "./dist/api/src/index.js"
+    ],
+    "#apex/api/*": [
+      "./dist/api/src/*.js"
     ]
   },
   "devDependencies": {
@@ -24,6 +27,7 @@
   "dependencies": {
     "@augu/lilith": "^5.3.3",
     "express": "^4.17.1",
-    "fs-extra": "^10.0.0"
+    "fs-extra": "^10.0.0",
+    "tslog": "^3.2.2"
   }
 }

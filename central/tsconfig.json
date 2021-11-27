@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "outDir": "./dist/",
     "paths": {
-      "#apex/api": ["../api/src/index"]
+      "#apex/api": ["../api/src/index"],
+      "#apex/api/*": ["../api/src/*"]
     }
   },
   "include": [

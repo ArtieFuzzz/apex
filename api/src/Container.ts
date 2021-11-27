@@ -1,10 +1,16 @@
 import { BaseComponent, Container } from '@augu/lilith'
 import { join } from 'path'
+import Logger from './singletons/Logger'
 
-export const container = new Container({
-	componentsDir: join(__dirname, 'components')
+const logger = Logger.getChildLogger({
+	name: 'Apex: API'
 })
 
-container.on('onBeforeInit', (cs: BaseComponent) => console.log(`Loading ${cs.name}`))
-container.on('onAfterInit', (cs: BaseComponent) => console.log(`Loaded ${cs.name}`))
-container.on('initError', (cs: BaseComponent) => console.error(`Failed to load ${cs.name}`))
+export const container = new Container({
+	componentsDir: join(__dirname, 'components'),
+	singletons: [Logger]
+})
+
+container.on('onBeforeInit', (cs: BaseComponent) => logger.info(`Loading ${cs.name}`))
+container.on('onAfterInit', (cs: BaseComponent) => logger.info(`Loaded ${cs.name}`))
+container.on('initError', (cs: BaseComponent) => logger.error(`Failed to load ${cs.name}`))

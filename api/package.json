@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@augu/lilith": "5.3.3",
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "tslog": "^3.2.2"
   },
   "devDependencies": {
     "@astriel-division/eslint-config": "1.2.2",

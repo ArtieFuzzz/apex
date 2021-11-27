@@ -23,13 +23,15 @@ WORKDIR /usr/apex/central
 RUN yarn --immuntable
 RUN yarn build
 
+RUN yarn cache clear
+
 # RUNNER
 
 FROM base as runner
 
 USER node
 
-EXPOSE 80
+EXPOSE 4090
 
 WORKDIR /usr/apex/central
 
