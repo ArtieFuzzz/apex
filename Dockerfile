@@ -1,6 +1,6 @@
 # Base
 
-FROM node:current-buster as base
+FROM node:current-buster@sha256:e2ad2c659bc2ed6fbbdb346b5eeabca368aedb77e2b7c8e74c0776a07493f1cc as base
 
 WORKDIR /usr/apex
 
