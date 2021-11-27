@@ -1,6 +1,6 @@
 # Apex
 
-The modules to get Apex to work
+Just my attempt at working in a monorepo
 
 ## Installation
 
