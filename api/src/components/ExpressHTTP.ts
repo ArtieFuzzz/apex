@@ -1,6 +1,6 @@
 import { Component, ComponentOrServiceHooks } from '@augu/lilith'
 import express, { Express } from 'express'
-import xPoweredBy from '../lib/middleware/x-powered-by'
+import xPoweredBy from '../middleware/x-powered-by'
 import Logger from '../singletons/Logger'
 
 @Component({
