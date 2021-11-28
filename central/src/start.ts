@@ -6,12 +6,12 @@ const logger = Logger.getChildLogger({
 });
 
 (async () => {
+	logger.info('Initiating!')
 	try {
 		await container.load()
 
 		logger.info('Apex has started!')
 	} catch (e) {
-		logger.silly(container.references)
 		logger.error(e)
 
 		process.exit(1)
