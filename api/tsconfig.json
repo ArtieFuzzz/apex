@@ -2,9 +2,9 @@
 	"extends": "@astriel-division/ts-config",
 	"compilerOptions": {
 		"outDir": "./dist/",
-		"types": ["node"],
 		"sourceMap": true,
-		"declaration": true
+		"importHelpers": false,
+		"importsNotUsedAsValues": "preserve",
 	},
 	"include": ["src/**/*.ts"],
 }

@@ -2,12 +2,14 @@
   "extends": "@astriel-division/ts-config",
   "compilerOptions": {
     "baseUrl": ".",
-    "removeComments": false,
     "outDir": "./dist/",
     "paths": {
       "#apex/api": ["../api/src/index"],
       "#apex/api/*": ["../api/src/*"]
-    }
+    },
+		"importHelpers": false,
+    "noEmitHelpers": false,
+		"importsNotUsedAsValues": "preserve",
   },
   "include": [
     "../api/**/*.ts",

@@ -8,5 +8,5 @@ export interface RouteDefinition {
 }
 
 export const enum MetadataKeys {
-	APIRoute = '$apex::api-routes'
+	APIRoute = '$apex::api-route'
 }

@@ -8,29 +8,32 @@ const logger = Logger.getChildLogger({
 (async () => {
 	try {
 		await container.load()
-		
+
 		logger.info('Apex has started!')
 	} catch (e) {
+		logger.silly(container.references)
 		logger.error(e)
 
 		process.exit(1)
 	}
 
 	process.once('SIGINT', () => {
-		logger.warn('Termination signal received. Exiting in 5 seconds...')
+		logger.warn('Termination signal received.')
 
 		stop()
 	})
 
 	process.once('SIGTERM', () => {
-		logger.warn('Termination signal received. Exiting in 5 seconds...')
+		logger.warn('Termination signal received.')
 
 		stop()
 	})
 })()
 
 function stop() {
-	setTimeout(() => {
+	logger.warn('Exiting in 5 seconds...')
+
+	return setTimeout(() => {
 		logger.warn('Exiting...')
 		container.dispose()
 		process.exit(0)

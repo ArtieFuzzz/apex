@@ -1,22 +1,21 @@
-import { Component, ComponentOrServiceHooks } from '@augu/lilith'
+import { Component, ComponentOrServiceHooks, Inject } from '@augu/lilith'
 import fastify, { FastifyReply, FastifyRequest } from 'fastify'
 import { join } from 'path'
-import Logger from '../singletons/Logger'
+import { Logger } from 'tslog'
 import { MetadataKeys, RouteDefinition } from '../types'
 
 @Component({
 	priority: 0,
-	name: 'http:api',
+	name: 'api:server',
 	children: join(__dirname, '..', 'routes')
 })
-export default class HTTPAPI implements ComponentOrServiceHooks<any> {
-	private logger!: typeof Logger
+export default class HTTP implements ComponentOrServiceHooks<any> {
+	@Inject
+	private readonly logger!: Logger
 
 	#app!: ReturnType<typeof fastify>
 
-	load() {
-		this.logger = Logger.getChildLogger({ name: 'http:api' })
-
+	public load() {
 		this.logger.info('Loading API server')
 
 		this.#app = fastify()
@@ -30,7 +29,7 @@ export default class HTTPAPI implements ComponentOrServiceHooks<any> {
 			done()
 		})
 
-		this.#app.listen(4090, () => {
+		return this.#app.listen(4090, () => {
 			this.logger.info('API server listening on port 4090')
 		})
 	}
