@@ -15,4 +15,24 @@ const logger = Logger.getChildLogger({
 
 		process.exit(1)
 	}
+
+	process.once('SIGINT', () => {
+		logger.warn('Termination signal received. Exiting in 5 seconds...')
+
+		stop()
+	})
+
+	process.once('SIGTERM', () => {
+		logger.warn('Termination signal received. Exiting in 5 seconds...')
+
+		stop()
+	})
 })()
+
+function stop() {
+	setTimeout(() => {
+		logger.warn('Exiting...')
+		container.dispose()
+		process.exit(0)
+	}, 5000)
+}

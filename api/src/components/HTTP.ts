@@ -13,6 +13,7 @@ export default class HTTPAPI implements ComponentOrServiceHooks<any> {
 	private logger!: typeof Logger
 
 	#app!: ReturnType<typeof fastify>
+
 	load() {
 		this.logger = Logger.getChildLogger({ name: 'http:api' })
 
@@ -22,6 +23,7 @@ export default class HTTPAPI implements ComponentOrServiceHooks<any> {
 		this.#app
 		.addHook('onRequest', (_, res, done) => {
 			res.headers({
+				'Cache-Control': 'public, max-age=7776000',
 				'X-Powered-By': 'ArtieFuzzz | Aussie TypeScript Developer'
 			})
 
@@ -41,10 +43,10 @@ export default class HTTPAPI implements ComponentOrServiceHooks<any> {
 		}
 
 		for (const route of routes) {
-			this.logger.info(`Initiating route: ${route.path}`)
+			this.logger.info(`Loading route: ${route.path}`)
 
 			// @ts-expect-error
-			this.#app[route.method](route.path, async (req: FastifyRequest, res: FastifyReply) => {
+			this.#app[route.method](route.path, async (req: FastifyRequest, res: FastifyReply, next: Fastify) => {
 				try {
 					await route.run.call(endpoint, req, res)
 				} catch (err) {
