@@ -1,4 +1,6 @@
-# Base
+#] ======== [#
+#]   BASE   [#
+#] ======== [#
 
 FROM node:current-buster@sha256:e2ad2c659bc2ed6fbbdb346b5eeabca368aedb77e2b7c8e74c0776a07493f1cc as base
 
@@ -14,7 +16,9 @@ COPY --chown=node:node . .
 
 ENTRYPOINT ["dumb-init", "--"]
 
-# Builder
+#] =========== [#
+#]   BUILDER   [#
+#] =========== [#
 
 FROM base as builder
 
@@ -25,7 +29,9 @@ RUN yarn build
 
 RUN yarn cache clear
 
-# RUNNER
+#] ========== [#
+#]   RUNNER   [#
+#] ========== [#
 
 FROM base as runner
 
