@@ -1,6 +1,7 @@
-import { ComponentOrServiceHooks, Service } from '@augu/lilith'
+import { ComponentOrServiceHooks, Inject, Service } from '@augu/lilith'
 import { CreateBucketCommand, ListBucketsCommand, ListObjectsCommand, S3Client } from '@aws-sdk/client-s3'
-import Logger from '../singletons/Logger'
+import { Logger } from 'tslog'
+import config from '../config'
 
 type ImageTypes = 'memes'
 type Pool = {
@@ -14,28 +15,29 @@ type Pool = {
 export default class ImageService implements ComponentOrServiceHooks {
 	protected S3!: S3Client
 	protected Pool!: Pool
-	private logger!: typeof Logger
+
+	@Inject
+	private readonly logger!: Logger
 
 	public async load(): Promise<any> {
-		this.logger = Logger.getChildLogger({ name: 'service:image' })
 		this.S3 = new S3Client({
 			credentials: {
-			  secretAccessKey: 'mCo060+46BEO0V9lFZdHst4vDynFWdqZshi6wKhV',
-			  accessKeyId: 'AKIAZJC7CNSEWH3VEOEV'
+			  secretAccessKey: config.secretKey,
+			  accessKeyId: config.keyId
 			},
-			region: process.env.region ?? 'ap-southeast-2'
+			region: config.region
 		})
 
 		const { Buckets } = await this.S3.send(new ListBucketsCommand({}))
 
-		if (!Buckets?.find((b) => b.Name === 'rt-03')) {
-			this.logger.warn(`Bucket not found. Creating a new bucket with the name of ${process.env.BUCKET_NAME}`)
+		if (!Buckets?.find((b) => b.Name === config.bucket)) {
+			this.logger.warn(`Bucket not found. Creating a new bucket with the name of ${config.bucket}`)
 
-			await this.S3.send(new CreateBucketCommand({ Bucket: 'rt-03' }))
+			await this.S3.send(new CreateBucketCommand({ Bucket: config.bucket }))
 			this.logger.info('Bucket created.')
 		}
 
-		const Objs = await this.S3.send(new ListObjectsCommand({ Bucket: 'rt-03' }))
+		const Objs = await this.S3.send(new ListObjectsCommand({ Bucket: config.bucket }))
 
 		if (!Objs) return this.logger.error('Bucket had no content')
 

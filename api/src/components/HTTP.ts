@@ -16,8 +16,6 @@ export default class HTTP implements ComponentOrServiceHooks<any> {
 	#app!: ReturnType<typeof fastify>
 
 	public load() {
-		this.logger.info('Loading API server')
-
 		this.#app = fastify()
 		this.#app
 		.addHook('onRequest', (_, res, done) => {

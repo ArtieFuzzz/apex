@@ -10,9 +10,11 @@
 		"importHelpers": false,
     "noEmitHelpers": false,
 		"importsNotUsedAsValues": "preserve",
+    "resolveJsonModule": true
   },
   "include": [
     "../api/**/*.ts",
+    "../api/src/config.json",
     "./src/*.ts"
   ], 
   "exclude": []
