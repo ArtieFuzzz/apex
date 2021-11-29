@@ -14,7 +14,7 @@ __metadata:
     "@augu/lilith": ^5.3.3
     "@aws-sdk/client-s3": ^3.42.0
     "@sapphire/fetch": ^2.0.3
-    "@types/convict": ^6.1.1
+    "@types/convict": 6.1.1
     "@types/node": 16.11.10
     convict: ^6.2.1
     express: ^4.17.1
@@ -1067,7 +1067,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/convict@npm:^6.1.1":
+"@types/convict@npm:6.1.1":
   version: 6.1.1
   resolution: "@types/convict@npm:6.1.1"
   dependencies:
