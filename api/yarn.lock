@@ -12,11 +12,11 @@ __metadata:
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@augu/lilith": 5.3.3
-    "@aws-sdk/client-s3": ^3.42.0
-    "@sapphire/fetch": ^2.0.3
-    "@types/convict": ^6.1.1
+    "@aws-sdk/client-s3": 3.42.0
+    "@sapphire/fetch": 2.0.3
+    "@types/convict": 6.1.1
     "@types/node": 16.11.10
-    convict: ^6.2.1
+    convict: 6.2.1
     fastify: 3.24.0
     reflect-metadata: 0.1.13
     tslog: 3.2.2
@@ -172,7 +172,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/client-s3@npm:^3.42.0":
+"@aws-sdk/client-s3@npm:3.42.0":
   version: 3.42.0
   resolution: "@aws-sdk/client-s3@npm:3.42.0"
   dependencies:
@@ -1056,7 +1056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/fetch@npm:^2.0.3":
+"@sapphire/fetch@npm:2.0.3":
   version: 2.0.3
   resolution: "@sapphire/fetch@npm:2.0.3"
   dependencies:
@@ -1065,7 +1065,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/convict@npm:^6.1.1":
+"@types/convict@npm:6.1.1":
   version: 6.1.1
   resolution: "@types/convict@npm:6.1.1"
   dependencies:
@@ -1402,7 +1402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convict@npm:^6.2.1":
+"convict@npm:6.2.1":
   version: 6.2.1
   resolution: "convict@npm:6.2.1"
   dependencies:
