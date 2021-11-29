@@ -27,6 +27,13 @@ export default class MainRouter {
 		})
 	}
 
+	@Get('/animals')
+	public Animals (_req: FastifyRequest, res: FastifyReply) {
+		res.send({
+			url: this.images.random('animals')
+		})
+	}
+
 	@Get('/i/:kind/:id')
 	public async CDN (req: FastifyRequest<{ Params: any }>, res: FastifyReply) {
 		const { kind, id } = req.params
