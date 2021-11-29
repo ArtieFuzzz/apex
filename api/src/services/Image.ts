@@ -43,8 +43,8 @@ export default class ImageService implements ComponentOrServiceHooks {
 		if (!Objs) return this.logger.error('Bucket had no content')
 
 		return this.Pool = {
-			memes: Objs.Contents!.filter((i) => i.Key! !== 'memes/').filter((i) => i.Key!.startsWith('memes/')).map((i) => `${config.s3.hostname}/i/${i.Key!}`),
-			animals: Objs.Contents!.filter((i) => i.Key! !== 'animals/').filter((i) => i.Key!.startsWith('animals/')).map((i) => `${config.s3.hostname}/i/${i.Key!}`)
+			memes: Objs.Contents!.filter((i) => i.Key! !== 'memes/').filter((i) => i.Key!.startsWith('memes/')).map((i) => `${config.hostname}/i/${i.Key!}`),
+			animals: Objs.Contents!.filter((i) => i.Key! !== 'animals/').filter((i) => i.Key!.startsWith('animals/')).map((i) => `${config.hostname}/i/${i.Key!}`)
 		}
 	}
 
