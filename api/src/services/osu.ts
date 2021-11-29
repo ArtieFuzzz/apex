@@ -8,7 +8,7 @@ import { OsuAuthResponse, OsuUserResponse } from '../types'
 	priority: 1,
 	name: 'osu'
 })
-export default class osu implements ComponentOrServiceHooks {
+export default class OsuService implements ComponentOrServiceHooks {
 	protected token!: string
 	protected renew!: NodeJS.Timer
 

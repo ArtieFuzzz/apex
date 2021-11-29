@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   apex:
+    image: artiefuzzz/apex
     build: .
     ports:
       - 4090:4090

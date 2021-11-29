@@ -15,6 +15,10 @@ interface Configuration {
 		client_id: string
 		client_secret: string
 	}
+	spotify: {
+		client_id: string
+		client_secret: string
+	}
 }
 
 
@@ -45,6 +49,16 @@ const config = convict<Configuration>({
 		client_secret: {
 			default: '',
 			env: 'OSU_CLIENT_SECRET'
+		}
+	},
+	spotify: {
+		client_id: {
+			default: '',
+			env: 'SPOTIFY_CLIENT_ID'
+		},
+		client_secret: {
+			default: '',
+			env: 'SPOTIFY_CLIENT_SECRET'
 		}
 	},
 	hostname: {

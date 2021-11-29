@@ -3,7 +3,7 @@ import { fetch, FetchResultTypes } from '@sapphire/fetch'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import config from '../config'
 import { Get } from '../decorators'
-import ImageService from '../services/Image'
+import ImageService from '../services/images'
 import OsuService from '../services/osu'
 
 export default class MainRouter {
