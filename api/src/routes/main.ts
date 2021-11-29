@@ -4,10 +4,14 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 import config from '../config'
 import { Get } from '../decorators'
 import ImageService from '../services/Image'
+import OsuService from '../services/osu'
 
 export default class MainRouter {
 	@Inject
 	private readonly images!: ImageService
+
+	@Inject
+	private readonly osu!: OsuService
 
 	@Get('/')
 	public root (_req: FastifyRequest, res: FastifyReply) {
@@ -17,7 +21,7 @@ export default class MainRouter {
 	}
 
 	@Get('/memes')
-	public memes (_req: FastifyRequest, res: FastifyReply) {
+	public Memes (_req: FastifyRequest, res: FastifyReply) {
 		res.send({
 			url: this.images.random('memes')
 		})
@@ -26,11 +30,19 @@ export default class MainRouter {
 	@Get('/i/:kind/:id')
 	public async CDN (req: FastifyRequest<{ Params: any }>, res: FastifyReply) {
 		const { kind, id } = req.params
-		const img = await fetch(`https://${config.bucket}.s3.${config.region}.amazonaws.com/${kind}/${id}`, FetchResultTypes.Buffer)
+		const img = await fetch(`https://${config.s3.bucket}.s3.${config.s3.region}.amazonaws.com/${kind}/${id}`, FetchResultTypes.Buffer)
 
 		res.header('Content-Type', this.ImageType(img))
 
 		return res.send(img)
+	}
+
+	@Get('/osu/:user')
+	public async osuGetUser (req: FastifyRequest<{ Params: any }>, res: FastifyReply) {
+		const { user } = req.params
+		const userData = await this.osu.getUser(user)
+
+		return res.send(userData)
 	}
 
 	private ImageType(buffer: Buffer) {

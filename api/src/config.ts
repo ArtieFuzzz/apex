@@ -4,28 +4,45 @@ import { join } from 'path'
 
 // * Add support for wasabi S3 instances
 interface Configuration {
-	keyId: string
-	secretKey: string
-	bucket: string
-	region: string
-	hostname: string
+	s3: {
+		keyId: string
+		secretKey: string
+		bucket: string
+		region: string
+		hostname: string
+	}
+	osu: {
+		client_id: string
+		client_secret: string
+	}
 }
 
+
 const config = convict<Configuration>({
-	keyId: {
-		default: ''
+	s3: {
+		keyId: {
+			default: ''
+		},
+		secretKey: {
+			default: ''
+		},
+		bucket: {
+			default: ''
+		},
+		region: {
+			default: 'ap-southeast-2'
+		},
+		hostname: {
+			default: 'localhost'
+		}
 	},
-	secretKey: {
-		default: ''
-	},
-	bucket: {
-		default: ''
-	},
-	region: {
-		default: 'ap-southeast-2'
-	},
-	hostname: {
-		default: 'localhost'
+	osu: {
+		client_id: {
+			default: ''
+		},
+		client_secret: {
+			default: ''
+		}
 	}
 })
 

@@ -7,7 +7,7 @@ const logger = new Logger({
 	displayFilePath: 'hideNodeModulesOnly',
 	dateTimePattern: '[ day-month-year / hour:minute:second ]',
   	displayTypes: false,
-  	name: 'apex',
+  	name: 'Apex',
 })
 
 export default logger

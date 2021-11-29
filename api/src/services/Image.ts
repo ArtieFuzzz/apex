@@ -23,27 +23,27 @@ export default class ImageService implements ComponentOrServiceHooks {
 		// * Add support for wasabi S3 instances
 		this.S3 = new S3Client({
 			credentials: {
-			  secretAccessKey: config.secretKey,
-			  accessKeyId: config.keyId
+			  secretAccessKey: config.s3.secretKey,
+			  accessKeyId: config.s3.keyId
 			},
-			region: config.region
+			region: config.s3.region
 		})
 
 		const { Buckets } = await this.S3.send(new ListBucketsCommand({}))
 
-		if (!Buckets?.find((b) => b.Name === config.bucket)) {
-			this.logger.warn(`Bucket not found. Creating a new bucket with the name of ${config.bucket}`)
+		if (!Buckets?.find((b) => b.Name === config.s3.bucket)) {
+			this.logger.warn(`Bucket not found. Creating a new bucket with the name of ${config.s3.bucket}`)
 
-			await this.S3.send(new CreateBucketCommand({ Bucket: config.bucket }))
+			await this.S3.send(new CreateBucketCommand({ Bucket: config.s3.bucket }))
 			this.logger.info('Bucket created.')
 		}
 
-		const Objs = await this.S3.send(new ListObjectsCommand({ Bucket: config.bucket }))
+		const Objs = await this.S3.send(new ListObjectsCommand({ Bucket: config.s3.bucket }))
 
 		if (!Objs) return this.logger.error('Bucket had no content')
 
 		this.Pool = {
-			memes: Objs.Contents!.filter((i) => i.Key! !== 'memes/').filter((i) => i.Key!.startsWith('memes/')).map((i) => `${config.hostname}/i/${i.Key!}`) /*,
+			memes: Objs.Contents!.filter((i) => i.Key! !== 'memes/').filter((i) => i.Key!.startsWith('memes/')).map((i) => `${config.s3.hostname}/i/${i.Key!}`) /*,
 			animals: Objs.Contents!.filter((i) => i.Key! !== 'animals/').filter((i) => i.Key!.startsWith('animals/')).map((i) => `${config.hostname}/i/${i.Key!}`) */
 		}
 	}
@@ -54,7 +54,6 @@ export default class ImageService implements ComponentOrServiceHooks {
 	}
 
 	public dispose() {
-		this.logger.warn('Disposing Image service')
 		this.S3.destroy()
 	}
 } 
