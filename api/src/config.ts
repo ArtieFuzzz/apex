@@ -8,6 +8,7 @@ interface Configuration {
 	secretKey: string
 	bucket: string
 	region: string
+	hostname: string
 }
 
 const config = convict<Configuration>({
@@ -22,6 +23,9 @@ const config = convict<Configuration>({
 	},
 	region: {
 		default: 'ap-southeast-2'
+	},
+	hostname: {
+		default: 'localhost'
 	}
 })
 

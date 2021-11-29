@@ -28,10 +28,34 @@ export default class MainRouter {
 		const { kind, id } = req.params
 		const img = await fetch(`https://${config.bucket}.s3.${config.region}.amazonaws.com/${kind}/${id}`, FetchResultTypes.Buffer)
 
-		// ! Fix this to rather send the image than download the image
-
-		res.header('Content-Type', 'image/png')
+		res.header('Content-Type', this.ImageType(img))
 
 		return res.send(img)
+	}
+
+	private ImageType(buffer: Buffer) {
+		const IntArray = new Int32Array(buffer)
+
+		switch (IntArray[0]) {
+			case 137: {
+				return {
+					mime: 'image/png'
+				}
+			}
+			case 255: {
+				return {
+					mime: 'image/jpg'
+				}
+			}
+			/* case 944130375: {
+				return {
+					mime: 'image/gif'
+				}
+			} */
+
+			default: {
+				throw Error('Could not resolve image type')
+			}
+		}
 	}
 }
