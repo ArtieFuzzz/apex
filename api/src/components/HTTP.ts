@@ -9,7 +9,7 @@ import { MetadataKeys, RouteDefinition } from '../types'
 	name: 'api:server',
 	children: join(__dirname, '..', 'routes')
 })
-export default class HTTP implements ComponentOrServiceHooks<any> {
+export default class HTTP implements ComponentOrServiceHooks<unknown> {
 	@Inject
 	private readonly logger!: Logger
 
@@ -33,7 +33,7 @@ export default class HTTP implements ComponentOrServiceHooks<any> {
 				message: `Couldn't find the route specified: ${req.url}`
 			})
 		})
-		.setErrorHandler((err, _, reply): any => {
+		.setErrorHandler(async (err, _, reply) => {
 			this.logger.fatal('Uh oh something went very wrong.', err)
 
 			return reply.code(500).send({
@@ -49,7 +49,7 @@ export default class HTTP implements ComponentOrServiceHooks<any> {
 		})
 	}
 
-	onChildLoad(endpoint: any) {
+	onChildLoad(endpoint: unknown) {
 		const routes = Reflect.getMetadata<RouteDefinition[]>(MetadataKeys.APIRoute, endpoint)
 		
 		if (routes.length === 0) {

@@ -35,7 +35,7 @@ export default class MainRouter {
 	}
 
 	@Get('/i/:kind/:id')
-	public async CDN (req: FastifyRequest<{ Params: any }>, res: FastifyReply) {
+	public async CDN (req: FastifyRequest<{ Params: { kind: string, id: string} }>, res: FastifyReply) {
 		const { kind, id } = req.params
 		const img = await fetch(`https://${config.s3.bucket}.s3.${config.s3.region}.amazonaws.com/${kind}/${id}`, FetchResultTypes.Buffer)
 
@@ -45,7 +45,7 @@ export default class MainRouter {
 	}
 
 	@Get('/osu/:user')
-	public async osuGetUser (req: FastifyRequest<{ Params: any }>, res: FastifyReply) {
+	public async osuGetUser (req: FastifyRequest<{ Params: { user: string } }>, res: FastifyReply) {
 		const { user } = req.params
 		const userData = await this.osu.getUser(user)
 
