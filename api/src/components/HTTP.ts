@@ -21,10 +21,27 @@ export default class HTTP implements ComponentOrServiceHooks<any> {
 		.addHook('onRequest', (_, res, done) => {
 			res.headers({
 				'Cache-Control': 'public, max-age=7776000',
-				'X-Powered-By': 'ArtieFuzzz | Aussie TypeScript Developer'
+				'X-Powered-By': 'ArtieFuzzz (https://github.com/ArtieFuzzz)'
 			})
 
 			done()
+		})
+		.setNotFoundHandler((req, reply) => {
+			return reply.code(404).send({
+				code: 404,
+				error: false,
+				message: `Couldn't find the route specified: ${req.url}`
+			})
+		})
+		.setErrorHandler((err, _, reply): any => {
+			this.logger.fatal('Uh oh something went very wrong.', err)
+
+			return reply.code(500).send({
+				code: 500,
+				message: 'Something went wrong at our end',
+				error: true,
+				error_message: `[${err.name}:${err.code}]: ${err.message}`
+			})
 		})
 
 		return this.#app.listen(4090, () => {

@@ -2,6 +2,7 @@ import convict from 'convict'
 import { existsSync } from 'fs'
 import { join } from 'path'
 
+// * Add support for wasabi S3 instances
 interface Configuration {
 	keyId: string
 	secretKey: string

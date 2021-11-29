@@ -20,6 +20,7 @@ export default class ImageService implements ComponentOrServiceHooks {
 	private readonly logger!: Logger
 
 	public async load(): Promise<any> {
+		// * Add support for wasabi S3 instances
 		this.S3 = new S3Client({
 			credentials: {
 			  secretAccessKey: config.secretKey,
