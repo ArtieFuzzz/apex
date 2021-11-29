@@ -3,7 +3,7 @@ import { CreateBucketCommand, ListBucketsCommand, ListObjectsCommand, S3Client }
 import { Logger } from 'tslog'
 import config from '../config'
 
-type ImageTypes = 'memes' | 'animals'
+type ImageTypes = 'memes' // | 'animals'
 type Pool = {
 	[K in ImageTypes]: string[]
 }
@@ -43,14 +43,14 @@ export default class ImageService implements ComponentOrServiceHooks {
 		if (!Objs) return this.logger.error('Bucket had no content')
 
 		this.Pool = {
-			memes: Objs.Contents!.filter((i) => i.Key! !== 'memes/').filter((i) => i.Key!.startsWith('memes/')).map((i) => `${config.hostname}/i/${i.Key!}`),
-			animals: Objs.Contents!.filter((i) => i.Key! !== 'animals/').filter((i) => i.Key!.startsWith('animals/')).map((i) => `${config.hostname}/i/${i.Key!}`)
+			memes: Objs.Contents!.filter((i) => i.Key! !== 'memes/').filter((i) => i.Key!.startsWith('memes/')).map((i) => `${config.hostname}/i/${i.Key!}`) /*,
+			animals: Objs.Contents!.filter((i) => i.Key! !== 'animals/').filter((i) => i.Key!.startsWith('animals/')).map((i) => `${config.hostname}/i/${i.Key!}`) */
 		}
 	}
 
-	public random() {
-		const P = this.Pool.memes
-		P[Math.floor(Math.random() * P.length)]
+	public random(kind: ImageTypes) {
+		const P = this.Pool[kind]
+		return P[Math.floor(Math.random() * P.length)]
 	}
 
 	public dispose() {

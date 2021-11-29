@@ -19,7 +19,7 @@ export default class MainRouter {
 	@Get('/memes')
 	public memes (_req: FastifyRequest, res: FastifyReply) {
 		res.send({
-			url: this.images.random()
+			url: this.images.random('memes')
 		})
 	}
 
