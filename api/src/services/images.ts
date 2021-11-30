@@ -13,6 +13,7 @@ type Pool = {
 	name: 'images'
 })
 export default class ImageService implements ComponentOrServiceHooks {
+	// * Refresh Pool somehow (Gets new uploaded images to the S3 bucket)
 	protected S3!: S3Client
 	protected Pool!: Pool
 
