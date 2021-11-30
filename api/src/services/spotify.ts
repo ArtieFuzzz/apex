@@ -5,6 +5,8 @@ import config from '../config'
 
 /**
  * * Inspired by: https://github.com/newtykins/newtt.me/blob/main/lib/spotify.ts
+ * @license MIT
+ * @copyright 2021
  */
 
 @Service({
