@@ -3,6 +3,10 @@ import { ComponentOrServiceHooks, Service } from '@augu/lilith'
 import SpotifyWebApi from 'spotify-web-api-node'
 import config from '../config'
 
+/**
+ * * Inspired by: https://github.com/newtykins/newtt.me/blob/main/lib/spotify.ts
+ */
+
 @Service({
 	priority: 2,
 	name: 'spotify'
