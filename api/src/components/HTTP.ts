@@ -1,8 +1,8 @@
+import { MetadataKeys, RouteDefinition } from '#types'
 import { Component, ComponentOrServiceHooks, Inject } from '@augu/lilith'
 import fastify, { FastifyReply, FastifyRequest } from 'fastify'
 import { join } from 'path'
 import { Logger } from 'tslog'
-import { MetadataKeys, RouteDefinition } from '../types'
 
 @Component({
 	priority: 0,

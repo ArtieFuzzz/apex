@@ -18,6 +18,7 @@ interface Configuration {
 	spotify: {
 		client_id: string
 		client_secret: string
+		refresh_token: string
 	}
 }
 
@@ -59,6 +60,10 @@ const config = convict<Configuration>({
 		client_secret: {
 			default: '',
 			env: 'SPOTIFY_CLIENT_SECRET'
+		},
+		refresh_token: {
+			default: '',
+			env: 'SPOTIFY_REFRESH_TOKEN'
 		}
 	},
 	hostname: {

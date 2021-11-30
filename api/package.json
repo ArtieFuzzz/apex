@@ -13,9 +13,11 @@
     "@aws-sdk/client-s3": "3.42.0",
     "@sapphire/fetch": "2.0.3",
     "@types/convict": "6.1.1",
+    "@types/spotify-web-api-node": "^5.0.4",
     "convict": "6.2.1",
     "fastify": "3.24.0",
     "reflect-metadata": "0.1.13",
+    "spotify-web-api-node": "^5.0.2",
     "tslog": "3.2.2"
   },
   "devDependencies": {

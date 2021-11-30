@@ -1,8 +1,8 @@
+import { OsuAuthResponse, OsuUserResponse } from '#types'
 import { ComponentOrServiceHooks, Service } from '@augu/lilith'
 import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import config from '../config'
 import constants from '../constants'
-import { OsuAuthResponse, OsuUserResponse } from '../types'
 
 @Service({
 	priority: 1,

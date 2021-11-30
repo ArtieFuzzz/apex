@@ -1,0 +1,16 @@
+{
+	"s3": {
+		"keyId": "",
+		"secretKey": "",
+		"bucket": ""
+	},
+	"osu": {
+		"client_id": "",
+		"client_secret": ""
+	},
+	"spotify": {
+		"client_id": "",
+		"client_secret": "",
+		"refresh_token": ""
+	}
+}

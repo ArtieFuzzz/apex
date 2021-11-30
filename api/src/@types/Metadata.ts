@@ -20,17 +20,15 @@
  * SOFTWARE.
  */
 
- import { MetadataKeys, RouteDefinition } from '#types'
+import type { FastifyReply, FastifyRequest } from 'fastify'
 
- export function Get(path: string): MethodDecorator {
-   return (target: any, _, descriptor: TypedPropertyDescriptor<any>) => {
-	 const routes = Reflect.getMetadata<RouteDefinition[]>(MetadataKeys.APIRoute, target) ?? [];
-	 routes.push({
-	   method: 'get',
-	   path,
-	   run: descriptor.value,
-	 });
- 
-	 Reflect.defineMetadata(MetadataKeys.APIRoute, routes, target);
-   };
- }
+export interface RouteDefinition {
+	run(req: FastifyRequest, res: FastifyReply): void | Promise<void>
+  
+	method: string
+	path: string
+}
+
+export const enum MetadataKeys {
+	APIRoute = '$apex::api-route'
+}
