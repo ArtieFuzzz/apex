@@ -12,7 +12,6 @@
     "noEmitHelpers": false,
 		"importsNotUsedAsValues": "preserve",
     "resolveJsonModule": true,
-    "skipDefaultLibCheck": true,
     "skipLibCheck": true
   },
   "include": [
