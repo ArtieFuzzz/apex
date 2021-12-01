@@ -33,13 +33,22 @@ export default class SpotifyService implements ComponentOrServiceHooks {
 	}
 
 	public async getCurrentTrack() {
-		const data: SpotifyTrackFullObject = (await this.spotify.getMyCurrentPlayingTrack()).body
-		const item = data.item
+		const { item, is_playing, progress_ms }: SpotifyTrackFullObject = (await this.spotify.getMyCurrentPlayingTrack()).body
 
-		if (item && data.is_playing) {
-			// TODO: Filter data out
-
-			return data
+		if (item && is_playing) {
+			return {
+				album_data: {
+					images: item.album.images,
+					name: item.album.name
+				},
+				artists: item.artists,
+				duration: item.duration_ms,
+				explicit: item.explicit,
+				popularity: item.popularity,
+				progress: progress_ms,
+				track_number: item.track_number,
+				uri: item.uri
+			}
 		} else {
 			return null // { message: 'I\'m not listening to anything right now!', error: false, code: 200 }
 		}
