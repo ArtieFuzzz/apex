@@ -20,6 +20,7 @@ export default class MainRouter {
 
 	@Get('/')
 	public root(_req: FastifyRequest, res: FastifyReply) {
+		res.code(HttpStatusCode.OK)
 		res.send({
 			message: 'Hello world!'
 		})
@@ -27,14 +28,16 @@ export default class MainRouter {
 
 	@Get('/memes')
 	public Memes(_req: FastifyRequest, res: FastifyReply) {
-		res.send({
+		res.code(HttpStatusCode.OK)
+		return res.send({
 			url: this.images.random('memes')
 		})
 	}
 
 	@Get('/animals')
 	public Animals(_req: FastifyRequest, res: FastifyReply) {
-		res.send({
+		res.code(HttpStatusCode.OK)
+		return res.send({
 			url: this.images.random('animals')
 		})
 	}
@@ -44,8 +47,9 @@ export default class MainRouter {
 		const { kind, id } = req.params
 		const img = await fetch(`https://${config.s3.bucket}.s3.${config.s3.region}.amazonaws.com/${kind}/${id}`, FetchResultTypes.Buffer)
 
-		res.header('Content-Type', this.ImageType(img))
+		res.header('Content-Type', this.ImageType(img).mime)
 
+		res.code(HttpStatusCode.OK)
 		return res.send(img)
 	}
 
@@ -57,7 +61,7 @@ export default class MainRouter {
 		return res.send(userData)
 	}
 
-	@Get('/spotify')
+	@Get('/spotify/np')
 	public async Spotify(_: FastifyRequest, res: FastifyReply) {
 		const currentTrackData = await this.spotify.getCurrentTrack()
 
@@ -68,10 +72,12 @@ export default class MainRouter {
 				code: HttpStatusCode.OK
 			}
 
+			res.code(HttpStatusCode.OK)
+
 			return res.send(message)
 		}
-
-		return res.code(HttpStatusCode.OK).send(currentTrackData)
+		res.code(HttpStatusCode.OK)
+		return res.send(currentTrackData)
 	}
 
 	private ImageType(buffer: Buffer) {
