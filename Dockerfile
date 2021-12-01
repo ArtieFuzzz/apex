@@ -3,8 +3,8 @@ FROM node:current-buster-slim
 WORKDIR /usr/apex
 
 RUN apt-get update && \
-    apt-get upgrade -y --no-install-recommended && \
-    apt-get install -y --no-install-recommended build-essential python3 dumb-init && \
+    apt-get upgrade -y --no-install-recommendeds && \
+    apt-get install -y --no-install-recommendeds build-essential python3 dumb-init && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
