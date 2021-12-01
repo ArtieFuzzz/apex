@@ -11,11 +11,12 @@
 		"importHelpers": false,
     "noEmitHelpers": false,
 		"importsNotUsedAsValues": "preserve",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
   },
   "include": [
     "../api/**/*.ts",
-    "../api/**/*.d.ts",
     "../api/src/config.json",
     "./src/*.ts"
   ], 
