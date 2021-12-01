@@ -13,19 +13,19 @@ type Pool = {
 	name: 'images'
 })
 export default class ImageService implements ComponentOrServiceHooks {
-	// * Refresh Pool somehow (Gets new uploaded images to the S3 bucket)
 	protected S3!: S3Client
 	protected Pool!: Pool
+	protected poolRefresh!: NodeJS.Timer
 
 	@Inject
 	private readonly logger!: Logger
 
-	public async load(): Promise<any> {
+	public async load() {
 		// * Add support for wasabi S3 instances
 		this.S3 = new S3Client({
 			credentials: {
-			  secretAccessKey: config.s3.secretKey,
-			  accessKeyId: config.s3.keyId
+				secretAccessKey: config.s3.secretKey,
+				accessKeyId: config.s3.keyId
 			},
 			region: config.s3.region
 		})
@@ -41,11 +41,34 @@ export default class ImageService implements ComponentOrServiceHooks {
 
 		const Objs = await this.S3.send(new ListObjectsCommand({ Bucket: config.s3.bucket }))
 
-		if (!Objs) return this.logger.error('Bucket had no content')
+		if (!Objs) {
+			this.logger.error('Bucket had no content')
+			return
+		}
 
-		return this.Pool = {
+		this.Pool = {
 			memes: Objs.Contents!.filter((i) => i.Key! !== 'memes/').filter((i) => i.Key!.startsWith('memes/')).map((i) => `${config.hostname}/i/${i.Key!}`),
 			animals: Objs.Contents!.filter((i) => i.Key! !== 'animals/').filter((i) => i.Key!.startsWith('animals/')).map((i) => `${config.hostname}/i/${i.Key!}`)
+		}
+
+		this.poolRefresh = setInterval(async () => await this.refreshPool() , 43200000)
+
+		return
+	}
+
+	protected async refreshPool() {
+		this.logger.info('Refreshing image cache')
+
+		const newObjs = await this.S3.send(new ListObjectsCommand({ Bucket: config.s3.bucket }))
+
+		if (!newObjs) {
+			this.logger.error('Bucket had no content')
+			return
+		}
+
+		return this.Pool = {
+			memes: newObjs.Contents!.filter((i) => i.Key! !== 'memes/').filter((i) => i.Key!.startsWith('memes/')).map((i) => `${config.hostname}/i/${i.Key!}`),
+			animals: newObjs.Contents!.filter((i) => i.Key! !== 'animals/').filter((i) => i.Key!.startsWith('animals/')).map((i) => `${config.hostname}/i/${i.Key!}`)
 		}
 	}
 
@@ -55,6 +78,7 @@ export default class ImageService implements ComponentOrServiceHooks {
 	}
 
 	public dispose() {
+		clearTimeout(this.poolRefresh)
 		this.S3.destroy()
 	}
-} 
+}
