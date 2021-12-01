@@ -16,7 +16,7 @@ __metadata:
     "@sapphire/fetch": ^2.0.3
     "@types/convict": 6.1.1
     "@types/node": 16.11.10
-    "@types/spotify-web-api-node": ^5.0.4
+    "@types/spotify-web-api-node": 5.0.4
     convict: ^6.2.1
     express: ^4.17.1
     fastify: ^3.24.0
@@ -1106,7 +1106,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/spotify-web-api-node@npm:^5.0.4":
+"@types/spotify-web-api-node@npm:5.0.4":
   version: 5.0.4
   resolution: "@types/spotify-web-api-node@npm:5.0.4"
   dependencies:
