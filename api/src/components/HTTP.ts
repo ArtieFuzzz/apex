@@ -1,4 +1,4 @@
-import { MetadataKeys, RouteDefinition } from '#types'
+import { HttpStatusCode, Message, MetadataKeys, RouteDefinition } from '#types'
 import { Component, ComponentOrServiceHooks, Inject } from '@augu/lilith'
 import fastify, { FastifyReply, FastifyRequest } from 'fastify'
 import { join } from 'path'
@@ -27,8 +27,9 @@ export default class HTTP implements ComponentOrServiceHooks<unknown> {
 			done()
 		})
 		.setNotFoundHandler((req, reply) => {
-			return reply.code(404).send({
-				code: 404,
+			reply.code(HttpStatusCode.NOT_FOUND)
+			return reply.code(HttpStatusCode.NOT_FOUND).send({
+				code: HttpStatusCode.NOT_FOUND,
 				error: false,
 				message: `Couldn't find the route specified: ${req.url}`
 			})
@@ -36,8 +37,9 @@ export default class HTTP implements ComponentOrServiceHooks<unknown> {
 		.setErrorHandler(async (err, _, reply) => {
 			this.logger.fatal('Uh oh something went very wrong.', err)
 
-			return reply.code(500).send({
-				code: 500,
+			reply.code(HttpStatusCode.INTERNAL_SERVER_ERROR)
+			return reply.send({
+				code: HttpStatusCode.INTERNAL_SERVER_ERROR,
 				message: 'Something went wrong at our end',
 				error: true,
 				error_message: `[${err.name}:${err.code}]: ${err.message}`
@@ -64,7 +66,16 @@ export default class HTTP implements ComponentOrServiceHooks<unknown> {
 				try {
 					await route.run.call(endpoint, req, res)
 				} catch (err) {
-					this.logger.error(err)
+					this.logger.fatal(`Uh oh! The server could not run the route: ${route.path}\n`, err)
+					res.code(HttpStatusCode.INTERNAL_SERVER_ERROR)
+
+					const message: Message = {
+						code: HttpStatusCode.INTERNAL_SERVER_ERROR,
+						error: true,
+						message: `Uh oh! Something went wrong in our backend.`,
+					}
+
+					return res.send(message)
 				}
 			})
 		}
