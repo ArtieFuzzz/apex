@@ -67,7 +67,7 @@ const config = convict<Configuration>({
 		}
 	},
 	hostname: {
-		default: 'localhost',
+		default: 'localhost:4090',
 		env: 'HOSTNAME'
 	}
 })
