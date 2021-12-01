@@ -20,17 +20,17 @@
  * SOFTWARE.
  */
 
- import { MetadataKeys, RouteDefinition } from '#types'
+import { MetadataKeys, RouteDefinition } from '#types'
 
- export function Get(path: string): MethodDecorator {
-   return (target: any, _, descriptor: TypedPropertyDescriptor<any>) => {
-	 const routes = Reflect.getMetadata<RouteDefinition[]>(MetadataKeys.APIRoute, target) ?? [];
-	 routes.push({
-	   method: 'get',
-	   path,
-	   run: descriptor.value,
-	 });
- 
-	 Reflect.defineMetadata(MetadataKeys.APIRoute, routes, target);
-   };
- }
+export function Get(path: string): MethodDecorator {
+	return (target: any, _, descriptor: TypedPropertyDescriptor<any>) => {
+		const routes = Reflect.getMetadata<RouteDefinition[]>(MetadataKeys.APIRoute, target) ?? []
+		routes.push({
+			method: 'get',
+			path,
+			run: descriptor.value
+		})
+
+		Reflect.defineMetadata(MetadataKeys.APIRoute, routes, target)
+	}
+}
