@@ -18,7 +18,7 @@ ENTRYPOINT ["dumb-init", "--"]
 
 WORKDIR /usr/apex/central
 
-RUN yarn install --immutable
+RUN yarn install
 RUN yarn build
 
 RUN yarn cache clear
