@@ -1,8 +1,8 @@
 import { HttpStatusCode, Message, MetadataKeys, RouteDefinition } from '#types'
-import { Component, ComponentOrServiceHooks, Inject } from '@augu/lilith'
+import { Component, ComponentOrServiceHooks } from '@augu/lilith'
 import fastify, { FastifyReply, FastifyRequest } from 'fastify'
 import { join } from 'path'
-import { Logger } from 'tslog'
+import Logger from '../singletons/Logger'
 
 @Component({
 	priority: 0,
@@ -10,12 +10,13 @@ import { Logger } from 'tslog'
 	children: join(__dirname, '..', 'routes')
 })
 export default class HTTP implements ComponentOrServiceHooks<unknown> {
-	@Inject
-	private readonly logger!: Logger
+	private logger!: typeof Logger
 
 	#app!: ReturnType<typeof fastify>
 
 	public load() {
+		this.logger = Logger.getChildLogger({ name: 'Apex: API / Phoenix'})
+
 		this.#app = fastify()
 		this.#app
 		.addHook('onRequest', (_, res, done) => {

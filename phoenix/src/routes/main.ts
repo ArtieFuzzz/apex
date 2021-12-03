@@ -47,7 +47,7 @@ export default class MainRouter {
 		const { kind, id } = req.params
 		const img = await fetch(`https://${config.s3.bucket}.s3.${config.s3.region}.amazonaws.com/${kind}/${id}`, FetchResultTypes.Buffer)
 
-		res.header('Content-Type', this.ImageType(img).mime)
+		res.type(this.ImageType(img).mime)
 
 		res.code(HttpStatusCode.OK)
 		return res.send(img)

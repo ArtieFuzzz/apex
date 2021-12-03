@@ -15,12 +15,14 @@ __metadata:
     "@aws-sdk/client-s3": ^3.42.0
     "@sapphire/fetch": ^2.0.3
     "@types/convict": 6.1.1
+    "@types/humanize-duration": ^3.27.0
     "@types/node": 16.11.10
     "@types/spotify-web-api-node": ^5.0.4
     convict: ^6.2.1
     express: ^4.17.1
     fastify: ^3.24.0
     fs-extra: ^10.0.0
+    humanize-duration: ^3.27.0
     reflect-metadata: ^0.1.13
     spotify-web-api-node: ^5.0.2
     tslog: ^3.2.2
@@ -1075,6 +1077,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 0150048098eec1ff0df5d04e77fd44ff0fa8e732cc5d5e43a2fe603b2d3f05c9f1e369977a109844b8b449b096818c017737b166ccb52b569161642d884e17d2
+  languageName: node
+  linkType: hard
+
+"@types/humanize-duration@npm:^3.27.0":
+  version: 3.27.0
+  resolution: "@types/humanize-duration@npm:3.27.0"
+  checksum: 2c3dc11efec4ff6ae352d9738955ae952a1336c4123c41736dfe30dc58a5bd42ead3f8ee1827e0da8feb7b70e4e3c2f9367925f9bb236ffcfc05799014058683
   languageName: node
   linkType: hard
 
@@ -2268,6 +2277,13 @@ __metadata:
     statuses: ">= 1.5.0 < 2"
     toidentifier: 1.0.0
   checksum: a59f359473f4b3ea78305beee90d186268d6075432622a46fb7483059068a2dd4c854a20ac8cd438883127e06afb78c1309168bde6cdfeed1e3700eb42487d99
+  languageName: node
+  linkType: hard
+
+"humanize-duration@npm:^3.27.0":
+  version: 3.27.0
+  resolution: "humanize-duration@npm:3.27.0"
+  checksum: db34111b391056bd0da8d6a3cc965ee52c2de497892c85f16d5559529232924dfabd8f3c4210135fbd12d0cea7da34dade05accc14ef69f2cba758ff4b4bbd3d
   languageName: node
   linkType: hard
 

@@ -1,5 +1,5 @@
-import { container } from '#apex/api'
-import Logger from '#apex/api/singletons/Logger'
+import { container } from '#apex/phoenix'
+import Logger from '#apex/phoenix/singletons/Logger'
 
 const logger = Logger.getChildLogger({
 	name: 'Apex: Central Control'

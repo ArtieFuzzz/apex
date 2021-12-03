@@ -4,9 +4,9 @@
     "baseUrl": "..",
     "outDir": "./dist/",
     "paths": {
-      "#apex/api": ["api/src/index"],
-      "#apex/api/*": ["api/src/*"],
-      "#types": ["api/src/@types/index"]
+      "#apex/phoenix": ["phoenix/src/index"],
+      "#apex/phoenix/*": ["phoenix/src/*"],
+      "#types": ["phoenix/src/@types/index"]
     },
 		"importHelpers": false,
     "noEmitHelpers": false,
@@ -15,8 +15,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "../api/**/*.ts",
-    "../api/src/config.json",
+    "../phoenix/**/*.ts",
+    "../phoenix/src/config.json",
     "./src/*.ts"
   ], 
   "exclude": []

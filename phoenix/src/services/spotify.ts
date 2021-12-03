@@ -1,5 +1,6 @@
-import { SpotifyTrackFullObject } from '#types'
+import { Artist, SpotifyTrackFullObject } from '#types'
 import { ComponentOrServiceHooks, Service } from '@augu/lilith'
+import humanizeDuration from 'humanize-duration'
 import SpotifyWebApi from 'spotify-web-api-node'
 import config from '../config'
 
@@ -41,16 +42,27 @@ export default class SpotifyService implements ComponentOrServiceHooks {
 					images: item.album.images,
 					name: item.album.name
 				},
-				artists: item.artists,
-				duration: item.duration_ms,
+				artists: this.formatArtists(item.artists),
+				duration: this.formatDuration(item.duration_ms),
 				explicit: item.explicit,
 				popularity: item.popularity,
-				progress: progress_ms,
+				progress: this.formatDuration(progress_ms),
 				track_number: item.track_number,
-				uri: item.uri
+				url: item.external_urls.spotify
 			}
 		} else {
 			return null // { message: 'I\'m not listening to anything right now!', error: false, code: 200 }
 		}
+	}
+
+	private formatArtists(artists: Artist[]) {
+		return artists.map((a) => { return { name: a.name, url: a.external_urls.spotify } })
+	}
+
+	private formatDuration(duration: number) {
+		return humanizeDuration(duration, {
+			round: true,
+			conjunction: " and "
+		})
 	}
 }

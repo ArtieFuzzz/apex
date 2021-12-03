@@ -14,22 +14,22 @@ interface Actions {
 	disallows: Disallows;
 }
 
- interface Disallows {
+interface Disallows {
 	resuming: boolean;
 }
 
- interface Context {
+interface Context {
 	external_urls: ExternalUrls;
 	href:          string;
 	type:          string;
 	uri:           string;
 }
 
- interface ExternalUrls {
+interface ExternalUrls {
 	spotify: string;
 }
 
- interface Item {
+interface Item {
 	album:             Album;
 	artists:           Artist[];
 	available_markets: string[];
@@ -49,7 +49,7 @@ interface Actions {
 	uri:               string;
 }
 
- interface Album {
+interface Album {
 	album_type:             string;
 	artists:                Artist[];
 	available_markets:      string[];
@@ -65,7 +65,7 @@ interface Actions {
 	uri:                    string;
 }
 
- interface Artist {
+export interface Artist {
 	external_urls: ExternalUrls;
 	href:          string;
 	id:            string;
@@ -74,12 +74,12 @@ interface Actions {
 	uri:           string;
 }
 
- interface Image {
+interface Image {
 	height: number;
 	url:    string;
 	width:  number;
 }
 
- interface ExternalIDS {
+interface ExternalIDS {
 	isrc: string;
 }
