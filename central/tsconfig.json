@@ -6,6 +6,8 @@
     "paths": {
       "#apex/phoenix": ["phoenix/src/index"],
       "#apex/phoenix/*": ["phoenix/src/*"],
+      "#apex/atlas": ["phoenix/src/index"],
+      "#apex/atlas/*": ["phoenix/src/*"],
       "#types": ["phoenix/src/@types/index"]
     },
 		"importHelpers": false,
@@ -17,6 +19,8 @@
   "include": [
     "../phoenix/**/*.ts",
     "../phoenix/src/config.json",
+    "../atlas/**/*.ts",
+    "../atlas/src/config.json",
     "./src/*.ts"
   ], 
   "exclude": []

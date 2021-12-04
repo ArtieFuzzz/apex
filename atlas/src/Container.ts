@@ -3,7 +3,7 @@ import { join } from 'path'
 import Logger from './singletons/Logger'
 
 const logger = Logger.getChildLogger({
-	name: 'Apex: Phoenix API'
+	name: 'Apex: Atlas API'
 })
 
 export const container = new Container({

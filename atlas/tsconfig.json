@@ -1,0 +1,14 @@
+{
+	"extends": "@astriel-division/ts-config",
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"baseUrl": "src",
+		"sourceMap": true,
+		"importHelpers": false,
+		"importsNotUsedAsValues": "preserve",
+		"paths": {
+			"#types": ["@types/index"]
+		}
+	},
+	"include": ["src/**/*.ts"],
+}

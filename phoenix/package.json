@@ -4,7 +4,6 @@
   "description": "An API server using @augu/lilith",
   "author": "ArtieFuzzz#8298",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "tsc"
   },

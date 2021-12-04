@@ -30,5 +30,5 @@ export interface RouteDefinition {
 }
 
 export const enum MetadataKeys {
-	APIRoute = '$phoenix::api-route'
+	APIRoute = '$atlas::api-route'
 }

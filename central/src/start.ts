@@ -1,4 +1,5 @@
-import { container } from '#apex/phoenix'
+import { container as Atlas } from '#apex/atlas'
+import { container as Phoenix } from '#apex/phoenix'
 import Logger from '#apex/phoenix/singletons/Logger'
 
 const logger = Logger.getChildLogger({
@@ -8,7 +9,8 @@ const logger = Logger.getChildLogger({
 (async () => {
 	logger.info('Initiating!')
 	try {
-		await container.load()
+		await Phoenix.load()
+		await Atlas.load()
 
 		logger.info('Apex has started!')
 	} catch (e) {
@@ -35,7 +37,7 @@ function stop() {
 
 	return setTimeout(() => {
 		logger.warn('Exiting...')
-		container.dispose()
+		Phoenix.dispose()
 		process.exit(0)
 	}, 5000)
 }

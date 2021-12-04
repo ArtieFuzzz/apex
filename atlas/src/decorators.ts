@@ -20,15 +20,30 @@
  * SOFTWARE.
  */
 
-import type { FastifyReply, FastifyRequest } from 'fastify'
+import { MetadataKeys, RouteDefinition } from '#types'
 
-export interface RouteDefinition {
-	run(req: FastifyRequest, res: FastifyReply): void | Promise<void>
-  
-	method: string
-	path: string
+export function Get(path: string): MethodDecorator {
+	return (target: any, _, descriptor: TypedPropertyDescriptor<any>) => {
+		const routes = Reflect.getMetadata<RouteDefinition[]>(MetadataKeys.APIRoute, target) ?? []
+		routes.push({
+			method: 'get',
+			path,
+			run: descriptor.value
+		})
+
+		Reflect.defineMetadata(MetadataKeys.APIRoute, routes, target)
+	}
 }
 
-export const enum MetadataKeys {
-	APIRoute = '$phoenix::api-route'
+export function Post(path: string): MethodDecorator {
+	return (target: any, _, descriptor: TypedPropertyDescriptor<any>) => {
+		const routes = Reflect.getMetadata<RouteDefinition[]>(MetadataKeys.APIRoute, target) ?? []
+		routes.push({
+			method: 'post',
+			path,
+			run: descriptor.value
+		})
+
+		Reflect.defineMetadata(MetadataKeys.APIRoute, routes, target)
+	}
 }

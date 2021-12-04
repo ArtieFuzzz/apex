@@ -20,15 +20,30 @@
  * SOFTWARE.
  */
 
-import type { FastifyReply, FastifyRequest } from 'fastify'
-
-export interface RouteDefinition {
-	run(req: FastifyRequest, res: FastifyReply): void | Promise<void>
+/** */
+declare namespace Reflect {
+	/**
+	 * Gets the metadata value for the provided metadata key on the target object or its prototype chain.
+	 * @param metadataKey A key used to store and retrieve metadata.
+	 * @param target The target object on which the metadata is defined.
+	 * @returns The metadata value for the metadata key if found; otherwise, `undefined`.
+	 * @example
+	 *
+	 *     class Example {
+	 *     }
+	 *
+	 *     // constructor
+	 *     result = Reflect.getMetadata("custom:annotation", Example);
+	 *
+	 */
+	function getMetadata<T>(metadataKey: any, target: any): T;
   
-	method: string
-	path: string
-}
-
-export const enum MetadataKeys {
-	APIRoute = '$phoenix::api-route'
-}
+	/**
+	 * Gets the metadata value for the provided metadata key on the target object or its prototype chain.
+	 * @param metadataKey A key used to store and retrieve metadata.
+	 * @param target The target object on which the metadata is defined.
+	 * @param propertyKey The property key for the target.
+	 * @returns The metadata value for the metadata key if found; otherwise, `undefined`.
+	 */
+	function getMetadata<T>(metadataKey: any, target: any, propertyKey: string | symbol): T;
+  }
