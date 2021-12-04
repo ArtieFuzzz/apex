@@ -1,0 +1,21 @@
+{
+  "ServiceSnippet": {
+    "prefix": "Service",
+    "body": [
+      "import { ComponentOrServiceHooks, Service } from '@augu/lilith'",
+      "",
+      "@Service({",
+      "	priority: 0,",
+      "	name: 'SERVICE_NAME'",
+      "})",
+      "export default class SERVICE_NAME implements ComponentOrServiceHooks {",
+      "",
+      "	public async load() {",
+      "		/* Insert code here */",
+      "	}",
+      "}",
+      ""
+    ],
+    "description": "ServiceSnippet"
+  }
+}
