@@ -9,18 +9,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@apex/phoenix@workspace:."
   dependencies:
-    "@artiefuzzz/lynx": ^1.2.3
+    "@artiefuzzz/lynx": 1.2.3
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@augu/lilith": 5.3.3
     "@aws-sdk/client-s3": 3.43.0
     "@types/convict": 6.1.1
-    "@types/humanize-duration": ^3.27.0
+    "@types/humanize-duration": 3.27.0
     "@types/node": 16.11.10
-    "@types/spotify-web-api-node": ^5.0.4
+    "@types/spotify-web-api-node": 5.0.4
     convict: 6.2.1
     fastify: 3.24.0
-    humanize-duration: ^3.27.0
+    humanize-duration: 3.27.0
     reflect-metadata: 0.1.13
     spotify-web-api-node: 5.0.2
     tslog: 3.3.0
@@ -28,7 +28,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@artiefuzzz/lynx@npm:^1.2.3":
+"@artiefuzzz/lynx@npm:1.2.3":
   version: 1.2.3
   resolution: "@artiefuzzz/lynx@npm:1.2.3"
   checksum: 810b26827b2268f3de68ecd49560e6e6ee7be4a8d14be8fd8d407917939bb75ec2365e80dcf08eee67876af09573b415519d37ab92fe1220dd820a65d0a9a503
@@ -1076,7 +1076,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/humanize-duration@npm:^3.27.0":
+"@types/humanize-duration@npm:3.27.0":
   version: 3.27.0
   resolution: "@types/humanize-duration@npm:3.27.0"
   checksum: 2c3dc11efec4ff6ae352d9738955ae952a1336c4123c41736dfe30dc58a5bd42ead3f8ee1827e0da8feb7b70e4e3c2f9367925f9bb236ffcfc05799014058683
@@ -1111,7 +1111,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/spotify-web-api-node@npm:^5.0.4":
+"@types/spotify-web-api-node@npm:5.0.4":
   version: 5.0.4
   resolution: "@types/spotify-web-api-node@npm:5.0.4"
   dependencies:
@@ -2049,7 +2049,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"humanize-duration@npm:^3.27.0":
+"humanize-duration@npm:3.27.0":
   version: 3.27.0
   resolution: "humanize-duration@npm:3.27.0"
   checksum: db34111b391056bd0da8d6a3cc965ee52c2de497892c85f16d5559529232924dfabd8f3c4210135fbd12d0cea7da34dade05accc14ef69f2cba758ff4b4bbd3d

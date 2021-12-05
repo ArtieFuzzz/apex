@@ -18,9 +18,9 @@
     "tslog": "^3.3.0"
   },
   "devDependencies": {
-    "@astriel-division/ts-config": "^1.0.7",
-    "@types/convict": "^6.1.1",
-    "@types/node": "^16.11.11",
-    "typescript": "^4.5.2"
+    "@astriel-division/ts-config": "1.0.7",
+    "@types/convict": "6.1.1",
+    "@types/node": "16.11.11",
+    "typescript": "4.5.2"
   }
 }
