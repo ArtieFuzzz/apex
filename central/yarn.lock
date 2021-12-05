@@ -9,11 +9,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@apex/central@workspace:."
   dependencies:
+    "@artiefuzzz/lynx": ^1.2.4
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@augu/lilith": ^5.3.3
     "@aws-sdk/client-s3": ^3.42.0
-    "@sapphire/fetch": ^2.0.3
     "@types/convict": 6.1.1
     "@types/humanize-duration": ^3.27.0
     "@types/node": 16.11.10
@@ -31,6 +31,13 @@ __metadata:
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
+
+"@artiefuzzz/lynx@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "@artiefuzzz/lynx@npm:1.2.4"
+  checksum: 5e8277b8aa909f318b41faf96841ed05279709fca1014b01df003254e594c226309a1e2516a0eccca9534d75dc22c492c077a37cb2a0e6ebdb68b79325a8b242
+  languageName: node
+  linkType: hard
 
 "@astriel-division/eslint-config@npm:1.2.2":
   version: 1.2.2
@@ -1064,15 +1071,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/fetch@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "@sapphire/fetch@npm:2.0.3"
-  dependencies:
-    cross-fetch: ^3.1.4
-  checksum: 7e0ddbd79c0d84f322c5ba3c50a9d353a599ff39279f698f21433cf6e3cf8eaf6e9a87d805b68b6c1c15c7106b8a47c4a049e00c0e7f715fb76d43a00cbd8595
-  languageName: node
-  linkType: hard
-
 "@types/convict@npm:6.1.1":
   version: 6.1.1
   resolution: "@types/convict@npm:6.1.1"
@@ -1592,15 +1590,6 @@ __metadata:
   version: 2.1.3
   resolution: "cookiejar@npm:2.1.3"
   checksum: 88259983ebc52ceb23cdacfa48762b6a518a57872eff1c7ed01d214fff5cf492e2660d7d5c04700a28f1787a76811df39e8639f8e17670b3cf94ecd86e161f07
-  languageName: node
-  linkType: hard
-
-"cross-fetch@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "cross-fetch@npm:3.1.4"
-  dependencies:
-    node-fetch: 2.6.1
-  checksum: 2107e5e633aa327bdacab036b1907c7ddd28651ede0c1d4fd14db04510944d56849a8255e2f5b8f9a1da0e061b6cee943f6819fe29ed9a130195e7fadd82a4ff
   languageName: node
   linkType: hard
 
@@ -2800,13 +2789,6 @@ __metadata:
   version: 0.6.2
   resolution: "negotiator@npm:0.6.2"
   checksum: dfddaff6c06792f1c4c3809e29a427b8daef8cd437c83b08dd51d7ee11bbd1c29d9512d66b801144d6c98e910ffd8723f2432e0cbf8b18d41d2a09599c975ab3
-  languageName: node
-  linkType: hard
-
-"node-fetch@npm:2.6.1":
-  version: 2.6.1
-  resolution: "node-fetch@npm:2.6.1"
-  checksum: 91075bedd57879117e310fbcc36983ad5d699e522edb1ebcdc4ee5294c982843982652925c3532729fdc86b2d64a8a827797a745f332040d91823c8752ee4d7c
   languageName: node
   linkType: hard
 

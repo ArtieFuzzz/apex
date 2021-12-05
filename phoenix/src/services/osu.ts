@@ -1,6 +1,6 @@
 import { OsuAuthResponse, OsuUserResponse } from '#types'
+import { Methods, request, SendAs } from '@artiefuzzz/lynx'
 import { ComponentOrServiceHooks, Service } from '@augu/lilith'
-import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import config from '../config'
 import constants from '../constants'
 
@@ -27,12 +27,10 @@ export default class OsuService implements ComponentOrServiceHooks {
 	}
 
 	public async getUser(username: string) {
-		const req = await fetch<OsuUserResponse>(`${constants.urls.get_user}/${username}/osu`, {
-			headers: {
-				authorization: `Bearer ${this.token}`,
-				accept: 'application/json'
-			}
-		}, FetchResultTypes.JSON)
+		const { json: req } = await request<OsuUserResponse>(`${constants.urls.get_user}/${username}/osu`).headers({
+			authorization: `Bearer ${this.token}`,
+			accept: 'application/json'
+		}).send()
 
 		const grades = req.statistics.grade_counts
 
@@ -52,18 +50,12 @@ export default class OsuService implements ComponentOrServiceHooks {
 	}
 
 	async renewToken() {
-		const data = await fetch<OsuAuthResponse>('https://osu.ppy.sh/oauth/token', {
-			method: FetchMethods.Post,
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				"client_id": config.osu.client_id,
-				"client_secret": config.osu.client_secret,
-				"grant_type": "client_credentials",
-				"scope": "public"
-			})
-		}, FetchResultTypes.JSON)
+		const { json: data } = await request<OsuAuthResponse>('https://osu.ppy.sh/oauth/token', Methods.Post).body({
+			"client_id": config.osu.client_id,
+			"client_secret": config.osu.client_secret,
+			"grant_type": "client_credentials",
+			"scope": "public"
+		}, SendAs.JSON).send()
 
 		this.token = data.access_token
 	}

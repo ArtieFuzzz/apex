@@ -1,6 +1,6 @@
 import { HttpStatusCode, Message } from '#types'
+import { request } from '@artiefuzzz/lynx'
 import { Inject } from '@augu/lilith'
-import { fetch, FetchResultTypes } from '@sapphire/fetch'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import config from '../config'
 import { Get } from '../decorators'
@@ -45,7 +45,7 @@ export default class MainRouter {
 	@Get('/i/:kind/:id')
 	public async CDN(req: FastifyRequest<{ Params: { kind: string, id: string } }>, res: FastifyReply) {
 		const { kind, id } = req.params
-		const img = await fetch(`https://${config.s3.bucket}.s3.${config.s3.region}.amazonaws.com/${kind}/${id}`, FetchResultTypes.Buffer)
+		const { buffer: img } = await request(`https://${config.s3.bucket}.s3.${config.s3.region}.amazonaws.com/${kind}/${id}`).send()
 
 		res.type(this.ImageType(img).mime)
 
