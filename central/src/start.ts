@@ -1,6 +1,9 @@
 import { container as Atlas } from '#apex/atlas'
 import { container as Phoenix } from '#apex/phoenix'
 import Logger from '#apex/phoenix/singletons/Logger'
+import { config } from 'dotenv'
+
+config({ path: '../.env' })
 
 const logger = Logger.getChildLogger({
 	name: 'Apex: Central Control'

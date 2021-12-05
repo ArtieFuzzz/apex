@@ -19,6 +19,7 @@ __metadata:
     "@types/node": 16.11.11
     "@types/spotify-web-api-node": 5.0.4
     convict: ^6.2.1
+    dotenv: ^10.0.0
     express: ^4.17.1
     fastify: ^3.24.0
     fs-extra: ^10.0.0
@@ -1689,6 +1690,13 @@ __metadata:
   dependencies:
     esutils: ^2.0.2
   checksum: a45e277f7feaed309fe658ace1ff286c6e2002ac515af0aaf37145b8baa96e49899638c7cd47dccf84c3d32abfc113246625b3ac8f552d1046072adee13b0dc8
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "dotenv@npm:10.0.0"
+  checksum: f412c5fe8c24fbe313d302d2500e247ba8a1946492db405a4de4d30dd0eb186a88a43f13c958c5a7de303938949c4231c56994f97d05c4bc1f22478d631b4005
   languageName: node
   linkType: hard
 
