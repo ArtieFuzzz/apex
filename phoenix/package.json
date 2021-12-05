@@ -8,12 +8,12 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@artiefuzzz/lynx": "1.2.3",
+    "@artiefuzzz/lynx": "1.2.4",
     "@augu/lilith": "5.3.3",
-    "@aws-sdk/client-s3": "3.43.0",
+    "@aws-sdk/client-s3": "3.44.0",
     "@types/convict": "6.1.1",
     "convict": "6.2.1",
-    "fastify": "3.24.0",
+    "fastify": "3.24.1",
     "humanize-duration": "3.27.0",
     "reflect-metadata": "0.1.13",
     "spotify-web-api-node": "5.0.2",
@@ -23,7 +23,7 @@
     "@astriel-division/eslint-config": "1.2.2",
     "@astriel-division/ts-config": "1.0.7",
     "@types/humanize-duration": "3.27.0",
-    "@types/node": "16.11.10",
+    "@types/node": "16.11.11",
     "@types/spotify-web-api-node": "5.0.4",
     "typescript": "4.5.2"
   }
