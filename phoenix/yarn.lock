@@ -9,29 +9,29 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@apex/phoenix@workspace:."
   dependencies:
-    "@artiefuzzz/lynx": 1.2.4
+    "@artiefuzzz/lynx": 1.2.7
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@augu/lilith": 5.3.3
     "@aws-sdk/client-s3": 3.44.0
     "@types/convict": 6.1.1
     "@types/humanize-duration": 3.27.0
-    "@types/node": 16.11.11
+    "@types/node": 16.11.12
     "@types/spotify-web-api-node": 5.0.4
     convict: 6.2.1
     fastify: 3.24.1
-    humanize-duration: 3.27.0
+    humanize-duration: 3.27.1
     reflect-metadata: 0.1.13
     spotify-web-api-node: 5.0.2
     tslog: 3.3.0
-    typescript: 4.5.2
+    typescript: 4.5.3
   languageName: unknown
   linkType: soft
 
-"@artiefuzzz/lynx@npm:1.2.4":
-  version: 1.2.4
-  resolution: "@artiefuzzz/lynx@npm:1.2.4"
-  checksum: 5e8277b8aa909f318b41faf96841ed05279709fca1014b01df003254e594c226309a1e2516a0eccca9534d75dc22c492c077a37cb2a0e6ebdb68b79325a8b242
+"@artiefuzzz/lynx@npm:1.2.7":
+  version: 1.2.7
+  resolution: "@artiefuzzz/lynx@npm:1.2.7"
+  checksum: a5fdb4bc538fc2ec612c62d70e4fa3a579659451aad329da9f27640ccb1f7792d530c37027a97cc66eaccb75bebef4ae60f32851c3d949656e33e9653ce95cee
   languageName: node
   linkType: hard
 
@@ -1097,10 +1097,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:16.11.11":
+"@types/node@npm:*":
   version: 16.11.11
   resolution: "@types/node@npm:16.11.11"
   checksum: 1c472bd63f23ca0e4effc96e6e0c693b83b027f613a1f41b6d1bd7791f65ce171a351e0a5c92575cb59e84ad0a930875397bfbbb91a7c925ddbbb558f7461af8
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:16.11.12":
+  version: 16.11.12
+  resolution: "@types/node@npm:16.11.12"
+  checksum: a3feb346d61a56f5a137c29bb8c63cfa3cc02e184b9dffdc18ef1528dcce55596e570575215a2e39e6ce69343eeb2a5ba71c271938f1dc8db4cc393902855412
   languageName: node
   linkType: hard
 
@@ -2049,10 +2056,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"humanize-duration@npm:3.27.0":
-  version: 3.27.0
-  resolution: "humanize-duration@npm:3.27.0"
-  checksum: db34111b391056bd0da8d6a3cc965ee52c2de497892c85f16d5559529232924dfabd8f3c4210135fbd12d0cea7da34dade05accc14ef69f2cba758ff4b4bbd3d
+"humanize-duration@npm:3.27.1":
+  version: 3.27.1
+  resolution: "humanize-duration@npm:3.27.1"
+  checksum: dad9f1a1367e6da9ca7568629e689e66c1b28206ff72096b51c6963fd7319f660073201fdb9bd5349427b9ea7c0d5cdf33e787c157cf30f996eaec4795029c30
   languageName: node
   linkType: hard
 
@@ -2854,13 +2861,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.5.2":
-  version: 4.5.2
-  resolution: "typescript@npm:4.5.2"
+"typescript@npm:4.5.3":
+  version: 4.5.3
+  resolution: "typescript@npm:4.5.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 74f9ce65d532bdf5d0214b3f60cf37992180023388c87a11ee6f838a803067ef0b63c600fa501b0deb07f989257dce1e244c9635ed79feca40bbccf6e0aa1ebc
+  checksum: 2ac278c20418882816789ad94a5d9e7f11969db7a2a23fa09e61f2fedf3814265cbd4f89d7f5b6e1f0e7be2b5f169becf5dab913d0da255b073ea3c8c324e6d4
   languageName: node
   linkType: hard
 
@@ -2874,13 +2881,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.5.2#~builtin<compat/typescript>":
-  version: 4.5.2
-  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=ddd1e8"
+"typescript@patch:typescript@4.5.3#~builtin<compat/typescript>":
+  version: 4.5.3
+  resolution: "typescript@patch:typescript@npm%3A4.5.3#~builtin<compat/typescript>::version=4.5.3&hash=ddd1e8"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 24a439e062a05e3285a4f0e8a40644116ecdca89f3e908bed01e5a01b9aee747e3bcf0e85fe9e017e5ebf0c0863437c39479f2616f55a244c2d82d37022cdc4f
+  checksum: 39ce769cf7489fff727350b70f7ccb59ce60fef32572892050ced2b1a5dac9c1f9ac8d74b08a5b2dc8d52c9d0f3031ea26b60b82fb1c059dd65704d21fb19d8b
   languageName: node
   linkType: hard
 
