@@ -9,7 +9,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@apex/phoenix@workspace:."
   dependencies:
-    "@artiefuzzz/lynx": 2.1.5
+    "@artiefuzzz/lynx": 2.2.0
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@augu/lilith": 5.3.3
@@ -28,13 +28,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@artiefuzzz/lynx@npm:2.1.5":
-  version: 2.1.5
-  resolution: "@artiefuzzz/lynx@npm:2.1.5"
+"@artiefuzzz/lynx@npm:2.2.0":
+  version: 2.2.0
+  resolution: "@artiefuzzz/lynx@npm:2.2.0"
   dependencies:
     "@artiefuzzz/utils": ^1.0.3
     undici: ^4.11.3
-  checksum: 1ae23a91516a5024be39c38e075b527d41ed3d033d61ecb1c6f43b5174a589da20607d1ffb6724995430f782e3f5f96ce2f7ac5a85c21b9d8938f23229d0a23f
+  checksum: a0f531f2921a6cc6209277d58c5f4e8ac0b14a712f9fa5afa6e3d91cdd6c3acdd36ca660560fed96ac88dde95bcaf43f613dff099f349d8537c9bc5260f7e320
   languageName: node
   linkType: hard
 
