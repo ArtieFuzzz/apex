@@ -1,5 +1,5 @@
 import { OsuAuthResponse, OsuUserResponse } from '#types'
-import { Methods, request, SendAs } from '@artiefuzzz/lynx'
+import { request, SendAs } from '@artiefuzzz/lynx'
 import { ComponentOrServiceHooks, Service } from '@augu/lilith'
 import config from '../config'
 import constants from '../constants'
@@ -27,11 +27,12 @@ export default class OsuService implements ComponentOrServiceHooks {
 	}
 
 	public async getUser(username: string) {
-		const { json: req } = await request<OsuUserResponse>(`${constants.urls.get_user}/${username}/osu`).headers({
+		const res = await request<OsuUserResponse>(`${constants.urls.get_user}/${username}/osu`).headers({
 			authorization: `Bearer ${this.token}`,
 			accept: 'application/json'
 		}).send()
 
+		const req = res.json
 		const grades = req.statistics.grade_counts
 
 		return {
@@ -50,13 +51,13 @@ export default class OsuService implements ComponentOrServiceHooks {
 	}
 
 	async renewToken() {
-		const { json: data } = await request<OsuAuthResponse>('https://osu.ppy.sh/oauth/token', Methods.Post).body({
+		const data = await request<OsuAuthResponse>('https://osu.ppy.sh/oauth/token', 'POST').body({
 			"client_id": config.osu.client_id,
 			"client_secret": config.osu.client_secret,
 			"grant_type": "client_credentials",
 			"scope": "public"
 		}, SendAs.JSON).send()
 
-		this.token = data.access_token
+		this.token = data.json.access_token
 	}
 }
