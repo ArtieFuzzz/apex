@@ -16,7 +16,7 @@ __metadata:
     "@aws-sdk/client-s3": ^3.42.0
     "@types/convict": 6.1.1
     "@types/humanize-duration": 3.27.0
-    "@types/node": 16.11.12
+    "@types/node": 16.11.14
     "@types/spotify-web-api-node": 5.0.4
     convict: ^6.2.1
     dotenv: ^10.0.0
@@ -29,7 +29,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     spotify-web-api-node: ^5.0.2
     tslog: ^3.2.2
-    typescript: 4.5.3
+    typescript: 4.5.4
   languageName: unknown
   linkType: soft
 
@@ -1123,10 +1123,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:16.11.12":
+"@types/node@npm:*":
   version: 16.11.12
   resolution: "@types/node@npm:16.11.12"
   checksum: a3feb346d61a56f5a137c29bb8c63cfa3cc02e184b9dffdc18ef1528dcce55596e570575215a2e39e6ce69343eeb2a5ba71c271938f1dc8db4cc393902855412
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:16.11.14":
+  version: 16.11.14
+  resolution: "@types/node@npm:16.11.14"
+  checksum: 0bd4333fb4e56532db7f5174732268b18089913ddbb0e97957228e64f9fe3babf9923c77ce6f07d3d354445cfbb8d31b95c1f8be3c0f7426308bd8b93d3aaa02
   languageName: node
   linkType: hard
 
@@ -3486,13 +3493,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.5.3":
-  version: 4.5.3
-  resolution: "typescript@npm:4.5.3"
+"typescript@npm:4.5.4":
+  version: 4.5.4
+  resolution: "typescript@npm:4.5.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2ac278c20418882816789ad94a5d9e7f11969db7a2a23fa09e61f2fedf3814265cbd4f89d7f5b6e1f0e7be2b5f169becf5dab913d0da255b073ea3c8c324e6d4
+  checksum: 59f3243f9cd6fe3161e6150ff6bf795fc843b4234a655dbd938a310515e0d61afd1ac942799e7415e4334255e41c2c49b7dd5d9fd38a17acd25a6779ca7e0961
   languageName: node
   linkType: hard
 
@@ -3506,13 +3513,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.5.3#~builtin<compat/typescript>":
-  version: 4.5.3
-  resolution: "typescript@patch:typescript@npm%3A4.5.3#~builtin<compat/typescript>::version=4.5.3&hash=ddd1e8"
+"typescript@patch:typescript@4.5.4#~builtin<compat/typescript>":
+  version: 4.5.4
+  resolution: "typescript@patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=ddd1e8"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 39ce769cf7489fff727350b70f7ccb59ce60fef32572892050ced2b1a5dac9c1f9ac8d74b08a5b2dc8d52c9d0f3031ea26b60b82fb1c059dd65704d21fb19d8b
+  checksum: 270255355c3236076dbbd0900ff0b7b159fac7e6a95f9ed8c59f57361c7dace9f1fbffd3b5eb21377c7f636027382ad89eb64b2acfbcd9e08574f04cfc75ca3d
   languageName: node
   linkType: hard
 
