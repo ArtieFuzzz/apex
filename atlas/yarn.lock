@@ -77,9 +77,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 16.11.12
-  resolution: "@types/node@npm:16.11.12"
-  checksum: a3feb346d61a56f5a137c29bb8c63cfa3cc02e184b9dffdc18ef1528dcce55596e570575215a2e39e6ce69343eeb2a5ba71c271938f1dc8db4cc393902855412
+  version: 17.0.0
+  resolution: "@types/node@npm:17.0.0"
+  checksum: 30970a70c2eb78dbe80613d73243c255aaa9ce057d9e8595069ca0aef0363db0af45dc0d35f445cc804576a99df2970c170130663d76cd60319b779872e92ad6
   languageName: node
   linkType: hard
 
@@ -302,8 +302,8 @@ __metadata:
   linkType: hard
 
 "fastify@npm:^3.24.1":
-  version: 3.24.1
-  resolution: "fastify@npm:3.24.1"
+  version: 3.25.0
+  resolution: "fastify@npm:3.25.0"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
     abstract-logging: ^2.0.0
@@ -320,7 +320,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: d73cd0398989d51df53c892ce5eac3a9e2c194aff7df8b557e8efa95093afca3cf7c9b9cc926249554272d94ff764722272ee0d37dd3f858b728106612a83fe7
+  checksum: 472b720b841dd4dd0ca745782687515f144c8610184cd658d099b2a5cbb69125c196d10fc7ad6c93f9c488300ecddc669b24b2278c3f5fe9a3add60028f7df02
   languageName: node
   linkType: hard
 
@@ -334,14 +334,14 @@ __metadata:
   linkType: hard
 
 "find-my-way@npm:^4.1.0":
-  version: 4.4.0
-  resolution: "find-my-way@npm:4.4.0"
+  version: 4.5.0
+  resolution: "find-my-way@npm:4.5.0"
   dependencies:
     fast-decode-uri-component: ^1.0.1
     fast-deep-equal: ^3.1.3
     safe-regex2: ^2.0.0
     semver-store: ^0.3.0
-  checksum: ec09b9af8f88b8bd0d0dc456be16e2db997dae8ed9d9a1989abd025e4f87f0e8acb0aaf228061f093e22c2b0f14cf43417300a7d32640eb908445b683b3541c6
+  checksum: 65d7d472ed2976207341c2f66cc4061e3992f799a8ff449d8ccee769013d23a539df0746f2cf553be56f1c7cd4fc14c257bc90b4e9dfd77f2066700eb5374103
   languageName: node
   linkType: hard
 
@@ -429,45 +429,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb-connection-string-url@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "mongodb-connection-string-url@npm:2.2.0"
+"mongodb-connection-string-url@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "mongodb-connection-string-url@npm:2.3.2"
   dependencies:
     "@types/whatwg-url": ^8.2.1
     whatwg-url: ^11.0.0
-  checksum: 1ebb2235accf0fb9d7916a9e445b8a72f913d7ba613c9ce85d6cffe8d272fef80fd6393847feb6a2fb5de4ccb0f6ae092604315283022459cf1c9582f415a166
+  checksum: 7f400efb1259320f0fe2a0d5565216260fd64e1b66d73eb031ccd2d10124a58c177f7eb1451eee8ee04a01027fa268d9cd2404aa213d23d4e6911b002764c61b
   languageName: node
   linkType: hard
 
-"mongodb@npm:4.2.1":
-  version: 4.2.1
-  resolution: "mongodb@npm:4.2.1"
+"mongodb@npm:4.2.2":
+  version: 4.2.2
+  resolution: "mongodb@npm:4.2.2"
   dependencies:
     bson: ^4.6.0
     denque: ^2.0.1
-    mongodb-connection-string-url: ^2.2.0
+    mongodb-connection-string-url: ^2.3.2
     saslprep: ^1.0.3
   dependenciesMeta:
     saslprep:
       optional: true
-  checksum: 3bd32c0afe538ee1c7166b69721941c2fc2fe2c30bada62d3178530942a119d83083a13b9263005f9b468acc5b25df82f848b809a2bb67169ea2074d4ffb4cef
+  checksum: 645cc8889ee093c0d6479638aa4f5b3e587b84be5179a35993f0796fda6b25d22c4b6f7d5f27b4d23c3aacb694db2ff696ea0a5080ddc745508ffff95131f3b5
   languageName: node
   linkType: hard
 
 "mongoose@npm:^6.0.14":
-  version: 6.1.1
-  resolution: "mongoose@npm:6.1.1"
+  version: 6.1.2
+  resolution: "mongoose@npm:6.1.2"
   dependencies:
     bson: ^4.2.2
     kareem: 2.3.2
-    mongodb: 4.2.1
+    mongodb: 4.2.2
     mpath: 0.8.4
     mquery: 4.0.0
     ms: 2.1.2
     regexp-clone: 1.0.0
     sift: 13.5.2
     sliced: 1.0.1
-  checksum: 5c79e7bc5f00a0fe2c58fdf3859c1539009bb35e81a52d45f73e4615dd6424413052726a5a1fa435f86f149a09cb875b53fc323538001c8dc1a23801ff7a1ef6
+  checksum: 27f285b3814f1fc00c5328970cfdd4df187fea802e9e15b8818b555df708672c15f3dbdbbbfdb2e6d17ec79bbb4777d471a7f4bfb2b2b77b129a0d3cb2772da7
   languageName: node
   linkType: hard
 
