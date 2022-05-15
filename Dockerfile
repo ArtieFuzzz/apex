@@ -1,4 +1,4 @@
-FROM node:current-buster-slim
+FROM node:current-buster-slim@sha256:84f696990b0199cf0d737c5397875667963cd0e51c97c3824bca8cef8ab1398c
 
 WORKDIR /usr/apex
 
